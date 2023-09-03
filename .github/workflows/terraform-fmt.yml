@@ -1,0 +1,18 @@
+# This is a basic workflow to check if any terraform files in a repo confirm to the terraform linting style
+
+name: terraform-fmt
+
+on:
+  pull_request:
+    branches: main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.6
+    - name: Run terraform fmt -recursive -check
+      run: terraform fmt -recursive -check
