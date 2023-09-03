@@ -12,3 +12,4 @@ resource "azurerm_storage_account" "storage_account" {
     ip_rules       = ["100.0.0.1", "134.124.0.1", "66.16.1.1"]
   }
 }
+##
